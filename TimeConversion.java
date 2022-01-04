@@ -59,15 +59,15 @@ class Result {
 
     public static String timeConversion(String s) {
     // Write your code here
-    String endText = s.substring(s.length()-2, s.length()-1);
+    String endText = s.substring(s.length()-2, s.length()-1); //A or P
     String returnString = "";
     if(endText.equals("P")){
         if(s.substring(0,2).equals("12")){
              returnString = s.substring(0, s.length()-2);
         }else{
-            Integer a = Integer.valueOf(s.substring(0,2));
-            a+=12;
-            returnString = String.valueOf(a) + s.substring(2, s.length()-2);
+            Integer hour = Integer.valueOf(s.substring(0,2));
+            hour+=12;
+            returnString = String.valueOf(hour) + s.substring(2, s.length()-2);
         }
     }else if(endText.equals("A")){
         if(s.substring(0,2).equals("12")){
